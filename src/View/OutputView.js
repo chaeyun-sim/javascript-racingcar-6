@@ -2,6 +2,10 @@ import { MissionUtils } from "@woowacourse/mission-utils";
 import {GUIDE_TEXT } from '../constants/constants.js'
 
 const OutputView = {
+  /**
+   * 
+   * @param {string} text 
+   */
   print(text) {
     MissionUtils.Console.print(text)
   },
@@ -15,8 +19,7 @@ const OutputView = {
    * @param {string[]} winner 
    */
   printWinners(winner) {
-    const result = winner.length === 1 ? winner[0] : winner.join(', ')
-    MissionUtils.Console.print(GUIDE_TEXT.printWinner + result)
+    MissionUtils.Console.print(GUIDE_TEXT.printWinner + winner)
   }
 }
 

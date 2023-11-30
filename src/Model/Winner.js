@@ -10,7 +10,9 @@ class Winner {
   }
 
   #printWinners(winners) {
-    OutputView.printWinners(winners)
+    const winnerString = winners.join(winners.length === 1 ? '' : ', ');
+
+    OutputView.printWinners(winnerString)
   }
 }
 

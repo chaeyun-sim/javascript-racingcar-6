@@ -6,8 +6,7 @@ const Validator = {
    * @param {string} input 
    */
   checkCarName(input) {
-    if (!input) throw new Error(ERROR_TEXT.emptyInput)
-
+    this.checkInputEmpty(input)
     this.checkCarNamesArray(input.split(','))
     this.checkDuplicate(input.split(','))
   },
@@ -22,9 +21,7 @@ const Validator = {
         throw new Error(ERROR_TEXT.overNameMax)
       }
 
-      if (!PATTERNS.onlyChar.test(name)) {
-        throw new Error(ERROR_TEXT.onlyChar)
-      }
+      if (!PATTERNS.onlyChar.test(name)) throw new Error(ERROR_TEXT.onlyChar)
     })
   },
 
@@ -36,9 +33,7 @@ const Validator = {
     const sorted = array.sort().join(',')
     const removeDuplicates = [...new Set(array)].sort().join(',')
     
-    if (sorted !== removeDuplicates) {
-      throw new Error(ERROR_TEXT.duplicated)
-    }
+    if (sorted !== removeDuplicates) throw new Error(ERROR_TEXT.duplicated)
   },
 
   /**
@@ -46,11 +41,19 @@ const Validator = {
    * @param {string} input 
    */
   checkLap(input){
-    if (!input) throw new Error(ERROR_TEXT.emptyInput);
+    this.checkInputEmpty(input)
 
     if (!PATTERNS.number.test(input)) throw new Error(ERROR_TEXT.onlyNumber)
 
     if (Number(input) > LAP_MAXIMUM) throw new Error(ERROR_TEXT.overLapMax)
+  },
+
+  /**
+   * 
+   * @param {string} input 
+   */
+  checkInputEmpty(input){
+    if (!input) throw new Error(ERROR_TEXT.emptyInput)
   }
 }
 
