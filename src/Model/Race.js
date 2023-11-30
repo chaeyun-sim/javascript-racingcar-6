@@ -34,7 +34,7 @@ class Race {
   }
 
   returnBoard() {
-    return this.scoreboard.getBoard();
+    return this.scoreboard.returnBoard();
   }
 }
 

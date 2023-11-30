@@ -24,7 +24,7 @@ class Cars {
    * 
    * @returns string[]
    */
-  returnValue(){
+  returnCars(){
     return this.#cars;
   }
 }

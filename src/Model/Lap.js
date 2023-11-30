@@ -12,7 +12,7 @@ class Lap {
     Validator.checkLap(input)
   }
 
-  returnValue() {
+  returnLaps() {
     return this.#lap
   }
 }

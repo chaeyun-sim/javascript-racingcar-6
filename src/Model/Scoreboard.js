@@ -18,7 +18,7 @@ class Scoreboard {
     return this.#board[name];
   }
 
-  getBoard() {
+  returnBoard() {
     return this.#board;
   }
 }

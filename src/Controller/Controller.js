@@ -19,12 +19,12 @@ class Controller {
   
   async requestCarNames() {
     const cars = await InputView.inputCarNames();
-    this.#cars = new Cars(cars).returnValue();
+    this.#cars = new Cars(cars).returnCars();
   }
 
   async requestLaps() {
     const laps = await InputView.inputLaps()
-    this.#laps = new Lap(laps).returnValue()
+    this.#laps = new Lap(laps).returnLaps()
   }
 
   async play() {
