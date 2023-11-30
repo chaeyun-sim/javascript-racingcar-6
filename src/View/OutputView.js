@@ -14,8 +14,9 @@ const OutputView = {
    * 
    * @param {string[]} winner 
    */
-  printWinner(winner) {
-    MissionUtils.Console.print(GUIDE_TEXT.printWinner + winner.join(', '))
+  printWinners(winner) {
+    const result = winner.length === 1 ? winner[0] : winner.join(', ')
+    MissionUtils.Console.print(GUIDE_TEXT.printWinner + result)
   }
 }
 

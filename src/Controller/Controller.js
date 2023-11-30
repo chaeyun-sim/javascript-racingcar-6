@@ -2,6 +2,7 @@ import Cars from '../Model/Cars.js';
 import InputView from '../View/InputView.js'
 import Lap from '../Model/Lap.js'
 import Race from '../Model/Race.js';
+import Winner from '../Model/Winner.js';
 
 class Controller {
   #cars
@@ -35,6 +36,11 @@ class Controller {
     this.race.runRace(this.#laps);
     const board = this.race.returnBoard();
     this.requestWinner(board)
+  }
+
+  requestWinner(board) {
+    this.winner = new Winner()
+    this.winner.findWinners(board)
   }
 }
 
