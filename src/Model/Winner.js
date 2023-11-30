@@ -22,12 +22,12 @@ class Winner {
    * @param {string[]} winners 
    */
   printWinners(winners) {
-    if (!winners) {
-      OutputView.printNoWinners()
-    }
-
     const winnerString = winners.join(winners.length === 1 ? '' : ', ');
     OutputView.printWinners(winnerString)
+  }
+
+  printNoWinners() {
+    OutputView.printNoWinners()
   }
 }
 

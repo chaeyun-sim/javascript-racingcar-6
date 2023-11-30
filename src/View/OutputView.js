@@ -23,7 +23,7 @@ const OutputView = {
   },
 
   printNoWinners() {
-    MissionUtils.Console.print(GUIDE_TEXT + '없습니다.')
+    MissionUtils.Console.print(GUIDE_TEXT.printWinner + '없습니다.')
   }
 }
 

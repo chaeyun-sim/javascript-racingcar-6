@@ -41,6 +41,9 @@ class Controller {
   requestWinner(board) {
     this.winner = new Winner()
     const winners = this.winner.findWinners(board)
+    if (!winners.length) {
+      return this.winner.printNoWinners()
+    }
     this.winner.printWinners(winners)
   }
 }
