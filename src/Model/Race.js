@@ -12,6 +12,10 @@ class Race {
     OutputView.printResult();
   }
 
+  /**
+   * 
+   * @param {number} laps 
+   */
   runRace(laps) {
     this.#printStart();
 
@@ -28,11 +32,19 @@ class Race {
     }
   }
 
+  /**
+   * 
+   * @param {string} car 
+   */
   #printRaceResult(car) {
     const score = this.scoreboard.getScore(car);
     OutputView.print(`${car} : ${'-'.repeat(score)}`);
   }
 
+  /**
+   * 
+   * @returns {}
+   */
   returnBoard() {
     return this.scoreboard.returnBoard();
   }
