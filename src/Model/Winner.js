@@ -6,8 +6,13 @@ class Winner {
    * @param {Object.<string, number>} scoreboard 
    */
   findWinners(scoreboard) {
-    const values = Object.values(scoreboard)
-    const winners = Object.keys(scoreboard).filter(key => scoreboard[key] === Math.max(...values));
+    const max = Math.max(...Object.values(scoreboard))
+
+    if (max === 0) {
+      return []
+    }
+
+    const winners = Object.keys(scoreboard).filter(key => scoreboard[key] === max);
 
     return winners
   }
@@ -17,8 +22,11 @@ class Winner {
    * @param {string[]} winners 
    */
   printWinners(winners) {
-    const winnerString = winners.join(winners.length === 1 ? '' : ', ');
+    if (!winners) {
+      OutputView.printNoWinners()
+    }
 
+    const winnerString = winners.join(winners.length === 1 ? '' : ', ');
     OutputView.printWinners(winnerString)
   }
 }

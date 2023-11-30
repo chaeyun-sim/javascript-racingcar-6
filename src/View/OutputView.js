@@ -20,6 +20,10 @@ const OutputView = {
    */
   printWinners(winner) {
     MissionUtils.Console.print(GUIDE_TEXT.printWinner + winner)
+  },
+
+  printNoWinners() {
+    MissionUtils.Console.print(GUIDE_TEXT + '없습니다.')
   }
 }
 
