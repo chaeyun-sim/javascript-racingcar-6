@@ -3,6 +3,10 @@ import RollDice from './RollDice.js';
 import OutputView from '../View/OutputView.js';
 
 class Race {
+  /**
+   * 
+   * @param {string[]} names 
+   */
   constructor(names) {
     this.cars = names;
     this.scoreboard = new Scoreboard(names);

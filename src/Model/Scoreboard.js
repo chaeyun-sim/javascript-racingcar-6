@@ -1,6 +1,10 @@
 class Scoreboard {
   #board
 
+  /**
+   * 
+   * @param {string[]} names 
+   */
   constructor(names) {
     this.#board = {};
     this.#makeBoard(names)
@@ -34,7 +38,7 @@ class Scoreboard {
 
   /**
    * 
-   * @returns {}
+   * @returns {Object.<string, number>}
    */
   returnBoard() {
     return this.#board;
