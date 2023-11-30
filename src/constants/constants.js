@@ -14,6 +14,7 @@ const GUIDE_TEXT = Object.freeze({
 const ERROR_TEXT = Object.freeze({
   emptyInput: '[ERROR] 잘못된 입력입니다. 빈 문자열은 입력할 수 없습니다.',
   correctSeperation: '[ERROR] 잘못된 형식입니다. 여러 대의 이름은 쉼표(,)로 구분하여 입력해야합니다.',
+  duplicated: '[ERROR] 중복된 이름이 존재합니다.',
   overNameMax : `[ERROR] 잘못된 형식입니다. 자동차 이름은 ${NAME_MAXIMUM}자 이하여야 합니다.`,
   overLapMax: `[ERROR] 잘못된 형식입니다. 게임 실행 횟수는 ${LAP_MAXIMUM}회 이하여야 합니다.`,
   onlyChar: '[ERROR] 잘못된 형식입니다. 특수문자는 입력할 수 없습니다.',
@@ -22,7 +23,7 @@ const ERROR_TEXT = Object.freeze({
 
 const PATTERNS = Object.freeze({
 	number: /^[0-9]+$/,
-	onlyChar: /^[a-zA-Z0-9가-힣]+$/,
+	onlyChar: /^[a-zA-Z0-9가-힣,]+$/,
 });;
 
 export {NAME_MAXIMUM, LAP_MAXIMUM, GO_FORWARD, STOP, GUIDE_TEXT, ERROR_TEXT, PATTERNS};
