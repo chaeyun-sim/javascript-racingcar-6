@@ -17,6 +17,8 @@ const Validator = {
    */
   checkCarNamesArray(array){
     array.forEach(name => {
+      this.checkInputEmpty(name)
+
       if (name.length > NAME_MAXIMUM) {
         throw new Error(ERROR_TEXT.overNameMax)
       }
