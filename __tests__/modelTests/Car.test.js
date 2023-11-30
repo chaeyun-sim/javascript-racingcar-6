@@ -1,5 +1,5 @@
-import { ERROR_TEXT } from '../src/constants/constants'
-import Cars from '../src/Model/Cars'
+import Cars from '../../src/Model/Cars.js'
+import { ERROR_TEXT } from "../../src/constants/constants";
 
 describe('Cars 클래스에 대한 테스트', () => {
   test.each([
@@ -9,7 +9,7 @@ describe('Cars 클래스에 대한 테스트', () => {
     expect(() => new Cars(input).returnCars()).toThrow(ERROR_TEXT.emptyInput)
   });
 
-  test('입력된 값이 쉼표(',')로 구분되나 빈 칸일 때 예외를 발생시킨다.', () => {
+  test('입력된 값이 쉼표(",")로 구분되나 빈 칸일 때 예외를 발생시킨다.', () => {
     const input = ',,,,'
     expect(() => new Cars(input).returnCars()).toThrow(ERROR_TEXT.emptyInput)
   })

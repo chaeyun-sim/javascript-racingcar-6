@@ -1,5 +1,5 @@
-import { ERROR_TEXT } from '../src/constants/constants'
-import Lap from '../src/Model/Lap.js'
+import { ERROR_TEXT } from '../../src/constants/constants'
+import Lap from '../../src/Model/Lap.js'
 
 describe('Lap 클래스에 대한 테스트', () => {
   test.each([
