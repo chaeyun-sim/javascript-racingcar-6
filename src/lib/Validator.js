@@ -1,4 +1,4 @@
-import { ERROR_TEXT, NAME_MAXIMUM, PATTERNS } from "../constants/constants.js";
+import { ERROR_TEXT, LAP_MAXIMUM, NAME_MAXIMUM, PATTERNS } from "../constants/constants.js";
 
 const Validator = {
   /**
@@ -19,7 +19,7 @@ const Validator = {
   checkCarNamesArray(array){
     array.forEach(name => {
       if (name.length > NAME_MAXIMUM) {
-        throw new Error(ERROR_TEXT.NAME_MAXIMUM)
+        throw new Error(ERROR_TEXT.overNameMax)
       }
 
       if (!PATTERNS.onlyChar.test(name)) {
@@ -39,6 +39,18 @@ const Validator = {
     if (sorted !== removeDuplicates) {
       throw new Error(ERROR_TEXT.duplicated)
     }
+  },
+
+  /**
+   * 
+   * @param {string} input 
+   */
+  checkLap(input){
+    if (!input) throw new Error(ERROR_TEXT.emptyInput);
+
+    if (!PATTERNS.number.test(input)) throw new Error(ERROR_TEXT.onlyNumber)
+
+    if (Number(input) > LAP_MAXIMUM) throw new Error(ERROR_TEXT.overLapMax)
   }
 }
 
