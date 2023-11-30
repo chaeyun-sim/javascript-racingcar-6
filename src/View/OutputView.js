@@ -16,7 +16,7 @@ const OutputView = {
 
   /**
    * 
-   * @param {string[]} winner 
+   * @param {string[]} winner
    */
   printWinners(winner) {
     MissionUtils.Console.print(GUIDE_TEXT.printWinner + winner)

@@ -24,10 +24,10 @@ class Race {
     this.#printStart();
 
     while (laps > 0) {
-      this.cars.forEach(car => {
+      this.cars.forEach((car, index) => {
         const score = new RollDice().moveForward();
         this.scoreboard.updateScore(car, score);
-        this.#printRaceResult(car);
+        this.#printRaceResult(car, index);
       });
 
       laps--;
@@ -38,9 +38,14 @@ class Race {
    * 
    * @param {string} car 
    */
-  #printRaceResult(car) {
+  #printRaceResult(car, index) {
     const score = this.scoreboard.getScore(car);
-    OutputView.print(`${car} : ${'-'.repeat(score)}`);
+    if (index === this.cars.length - 1) {
+      OutputView.print(`${car} : ${'-'.repeat(score)}`);
+      OutputView.print('')
+      return;
+    }
+    return OutputView.print(`${car} : ${'-'.repeat(score)}`);
   }
 
   /**

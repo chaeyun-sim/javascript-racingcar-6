@@ -3,6 +3,7 @@ import InputView from '../View/InputView.js'
 import Lap from '../Model/Lap.js'
 import Race from '../Model/Race.js';
 import Winner from '../Model/Winner.js';
+import OutputView from '../View/OutputView.js';
 
 class Controller {
   #cars
@@ -25,6 +26,7 @@ class Controller {
   async requestLaps() {
     const laps = await InputView.inputLaps()
     this.#laps = new Lap(laps).returnLaps()
+    OutputView.print('')
   }
 
   async play() {
