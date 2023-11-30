@@ -24,6 +24,6 @@ const ERROR_TEXT = Object.freeze({
 const PATTERNS = Object.freeze({
 	number: /^[0-9]+$/,
 	onlyChar: /^[a-zA-Z0-9가-힣]+$/,
-});;
+});
 
 export {NAME_MAXIMUM, LAP_MAXIMUM, GO_FORWARD, STOP, GUIDE_TEXT, ERROR_TEXT, PATTERNS};
