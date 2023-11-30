@@ -8,9 +8,7 @@ class Winner {
   findWinners(scoreboard) {
     const max = Math.max(...Object.values(scoreboard))
 
-    if (max === 0) {
-      return []
-    }
+    if (max === 0) return []
 
     const winners = Object.keys(scoreboard).filter(key => scoreboard[key] === max);
 

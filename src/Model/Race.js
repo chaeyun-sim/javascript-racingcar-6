@@ -23,16 +23,14 @@ class Race {
   runRace(laps) {
     this.#printStart();
 
-    let isPlaying = laps;
-
-    while (isPlaying > 0) {
+    while (laps > 0) {
       this.cars.forEach(car => {
         const score = new RollDice().moveForward();
         this.scoreboard.updateScore(car, score);
         this.#printRaceResult(car);
       });
 
-      isPlaying--;
+      laps--;
     }
   }
 
