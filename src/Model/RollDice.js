@@ -4,7 +4,6 @@ import { GO_FORWARD } from "../constants/constants.js";
 class RollDice {
   moveForward() {
     const RANDOM_NUMBER = MissionUtils.Random.pickNumberInRange(0, 9)
-
     return RANDOM_NUMBER >= GO_FORWARD ? 1 : 0
   }
 }
