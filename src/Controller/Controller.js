@@ -40,7 +40,8 @@ class Controller {
 
   requestWinner(board) {
     this.winner = new Winner()
-    this.winner.findWinners(board)
+    const winners = this.winner.findWinners(board)
+    this.winner.printWinners(winners)
   }
 }
 
